@@ -1,6 +1,6 @@
 /***********************************************************/
-/* Programa: ejercicio5                  Fecha:6/10/2017   */
-/* Autores: Lucía Rivas y Daniel Santo-Tomás               */
+/* Programa: ejercicio5                  Fecha:            */
+/* Autores:                                                */
 /*                                                         */
 /* Programa que escribe en un fichero                      */
 /* los tiempos medios del algoritmo de                     */
@@ -45,8 +45,8 @@ int main(int argc, char** argv)
   }
 
   printf("Practica numero 1, apartado 5\n");
-  printf("Realizada por:  Lucía Rivas y Daniel Santo-Tomás\n");
-  printf("Grupo: 1201\n");
+  printf("Realizada por: Vuestros nombres\n");
+  printf("Grupo: Vuestro grupo\n");
 
   /* comprueba la linea de comandos */
   for(i = 1; i < argc ; i++) {

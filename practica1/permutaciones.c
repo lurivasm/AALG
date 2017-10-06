@@ -36,8 +36,8 @@ int aleat_num(int inf, int sup)
 }
 
 /***************************************************/
-/* Funcion: genera_perm Fecha:                     */
-/* Autores:                                        */
+/* Funcion: genera_perm Fecha: 22/09/2017          */
+/* Autores: Lucía Rivas y Daniel Santo-Tomás       */
 /*                                                 */
 /* Rutina que genera una permutacion               */
 /* aleatoria                                       */
@@ -72,8 +72,8 @@ int* genera_perm(int N)
 }
 
 /***************************************************/
-/* Funcion: genera_permutaciones Fecha:            */
-/* Autores:                                        */
+/* Funcion: genera_permutaciones Fecha: 29/09/2017 */
+/* Autores: Lucía Rivas y Daniel Santo-Tomás       */
 /*                                                 */
 /* Funcion que genera n_perms permutaciones        */
 /* aleatorias de tamanio elementos                 */

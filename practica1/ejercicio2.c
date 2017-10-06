@@ -1,6 +1,6 @@
 /********************************************************/
-/* Programa: ejercicio2      Fecha:                     */
-/* Autores:                                             */
+/* Programa: ejercicio2      Fecha:22/09/2017           */
+/* Autores:Autores: Lucía Rivas y Daniel Santo-Tomás    */
 /*                                                      */
 /* Programa que genera permutaciones                    */
 /* aleatorias                                           */

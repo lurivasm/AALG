@@ -13,6 +13,7 @@
 #include "permutaciones.h"
 #include <time.h>
 
+
 /***************************************************/
 /* Funcion: aleat_num Fecha: 22/09/2017            */
 /* Autores:Lucía Rivas Molina y Daniel Santo-Tomás */
@@ -89,5 +90,13 @@ int* genera_perm(int N)
 /***************************************************/
 int** genera_permutaciones(int n_perms, int N)
 {
-/* vuestro codigo */
+	if(n_perms<=0 || N <=0) return NULL;
+	int **perm=(int**)malloc(sizeof(int*)*n_perms);
+	if(!perm) return NULL;
+	int i;
+	for(i=0;i<n_perms;i++){
+		perm[i] = genera_perm(N);
+		if(!perm[i]) return NULL;
+	}
+	return perm;
 }
