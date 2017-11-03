@@ -12,6 +12,7 @@
 
 #include "permutaciones.h"
 #include <time.h>
+#include <stdlib.h>
 
 
 /***************************************************/
@@ -30,7 +31,7 @@
 /***************************************************/
 int aleat_num(int inf, int sup)
 {
-  srand(rand());
+ 
 	
   return inf+(rand()%(sup-inf+1));
 }

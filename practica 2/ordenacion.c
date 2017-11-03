@@ -107,23 +107,96 @@ int Merge(int* tabla, int ip, int iu, int imedio){
 	return cont;
 }
 
+
 /***************************************************/
-/* Funcion: QuickSort   Fecha:20/10/2017               */
+/* Funcion: QuickSort   Fecha:20/10/2017           */
 /* Funcion que ordena una tabla                    */
 /***************************************************/
-
-
 
 int QuickSort(int* tabla, int ip, int iu){
 	if(!tabla || ip < 0 || ip > iu) return ERR;
 	if(ip == iu) return OK;
-	int M;
-  int* pos;
+	int OB = 0,pos = 0;
 
-	M = partir(tabla,ip,iu,pos);
 
-	if(ip < M-1) QuickSort(tabla,ip,M-1);
-	if(M+1 < iu) QuickSort(tabla,M+1,iu);
+	OB += partir(tabla, ip, iu, &pos);
+	if(OB == ERR) return ERR;
 
-	return OK;
+	if(ip < pos-1) OB += QuickSort(tabla, ip, pos-1);
+	if(pos+1 < iu) OB += QuickSort(tabla, pos+1, iu);
+
+	return OB;
+}
+
+
+/***************************************************/
+/* Funcion: Partir      Fecha:20/10/2017           */
+/* Funcion que parte una tabla para QuickSort      */
+/***************************************************/
+
+int partir(int *tabla, int ip, int iu, int *pos){
+	if(!tabla || ip < 0 || ip > iu || !pos) return ERR;
+	int k, cont = 0, aux, i;
+
+	cont = medio_avg(tabla, ip, iu, pos);
+	if(cont == ERR) return ERR;
+
+	k = tabla[*pos];
+	aux = tabla[ip];
+	tabla[ip] = tabla[*pos];
+	tabla[*pos] = aux;
+
+	*pos = ip;
+	for(i = ip+1; i <= iu; i++){
+		cont++;
+		if(tabla[i] < k){
+			(*pos)++;
+			aux = tabla[i];
+			tabla[i] = tabla[*pos];
+			tabla[*pos] = aux;
+		}
+	}
+	aux = tabla[ip];
+	tabla[ip] = tabla[*pos];
+	tabla[*pos] = aux;
+	return cont;
+}
+
+
+
+/***************************************************/
+/* Funcion: Medio       Fecha:20/10/2017           */
+/* Funcion que establece un pivote para QuickSort  */
+/***************************************************/
+int medio(int *tabla, int ip, int iu, int *pos){
+	if(!tabla || ip < 0 || ip > iu || !pos) return ERR;
+	*pos = ip;
+	return 0;
+}
+/***************************************************/
+/* Funcion: Medio_avg       Fecha:20/10/2017       */
+/* Funcion que establece un pivote para QuickSort  */
+/***************************************************/
+int medio_avg(int *tabla, int ip, int iu, int *pos){
+	if(!tabla || ip < 0 || ip > iu || !pos) return ERR;
+	*pos = (ip + iu)/2;
+	return 0;
+}
+
+/***************************************************/
+/* Funcion: Medio_avg       Fecha:20/10/2017       */
+/* Funcion que establece un pivote para QuickSort  */
+/***************************************************/
+int medio_stat(int *tabla, int ip, int iu, int *pos){
+	if(!tabla || ip < 0 || ip > iu || !pos) return ERR;
+	int m;
+	m = (ip + iu)/2;
+
+	if(tabla[ip] < tabla[iu]){
+		if(tabla[iu] < tabla[m]) *pos = iu;
+		if(tabla[m] < tabla[ip]) *pos = ip;
+	}
+	if(tabla[ip] < tabla)
+
+	return 0;
 }

@@ -31,8 +31,6 @@
 /***************************************************/
 int aleat_num(int inf, int sup)
 {
-  srand(rand());
-	
   return inf+(rand()%(sup-inf+1));
 }
 
@@ -64,12 +62,16 @@ int* genera_perm(int N)
   for(i = 0; i < N; i++){
 	aux = *(array + i);
 	aleat = aleat_num(i, N - 1);
-	
+  if(aleat == -1){
+    free(array);
+    return NULL;
+  }
+
 	*(array + i) = *(array + aleat);
 	*(array + aleat) = aux;
   }
-  
-  return array;	
+
+  return array;
 }
 
 /***************************************************/

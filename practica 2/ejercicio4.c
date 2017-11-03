@@ -32,7 +32,7 @@ int main(int argc, char** argv)
   printf("Practica numero 1, apartado 4\n");
   printf("Realizada por:  Lucía Rivas y Daniel Santo-Tomás\n");
   printf("Grupo: 1201\n");
-	
+
 
   /* comprueba la linea de comandos */
   for(i = 1; i < argc; i++) {
@@ -51,7 +51,7 @@ int main(int argc, char** argv)
     exit(-1);
   }
 
-  ret = MergeSort(perm, 0, tamano-1);
+  ret = QuickSort(perm, 0, tamano-1);
 
 
   if (ret == ERR) {
@@ -69,4 +69,3 @@ int main(int argc, char** argv)
 
   return 0;
 }
-
