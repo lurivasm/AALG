@@ -152,7 +152,7 @@ if(!metodo || !generador) return ERR;
 
 PDICC d;
 int *perm,*claves;
-int max=-1,min=-1,i,aux=0, ppos;
+int max = -1, min = -1, i, aux = 0, ppos;
 double secs = 0, med = 0;
 struct timeval t_ini, t_fin;
 
@@ -164,7 +164,7 @@ if(!perm){
   return ERR;
 }
 
-if(insercion_masiva_diccionario (d,perm,N) == ERR){
+if(insercion_masiva_diccionario (d, perm, N) == ERR){
   free(perm);
   free(d);
   return ERR;
@@ -176,9 +176,9 @@ if(!claves){
   return ERR;
 }
 
-generador(claves,n_veces*N,N);
+generador(claves, n_veces*N, N);
 
-for(i = 0;i < N*n_veces; i++){
+for(i = 0; i < N*n_veces; i++){
   gettimeofday(&t_ini, NULL);
   aux = busca_diccionario(d, claves[i], &ppos, metodo);
 
@@ -200,6 +200,7 @@ for(i = 0;i < N*n_veces; i++){
 
   if(aux < min) min = aux;
   if(aux > max) max = aux;
+
 }
 
 ptiempo->N = N;
@@ -210,7 +211,7 @@ ptiempo->medio_ob = (med/(N*n_veces));
 ptiempo->tiempo = (secs/(N*n_veces));
 
 free(claves);
-free(d);
+libera_diccionario(d);
 free(perm);
 
 return OK;
